@@ -13,7 +13,7 @@
 
   <body id="page-top">
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-      <a class="navbar-brand mr-1" href="SemiFinal.html">Citypedia</a>
+      <a class="navbar-brand mr-1" href="index.html">Citypedia</a>
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
       </button>
@@ -176,7 +176,7 @@
               });
             </script>
           </div>
-          <div class="card-footer small text-muted">Power by MySQL</div>
+          <div class="card-footer small text-muted">Powered by MySQL</div>
         </div>
 
         <footer class="sticky-footer">

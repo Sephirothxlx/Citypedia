@@ -13,7 +13,7 @@
 
   <body id="page-top">
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-      <a class="navbar-brand mr-1" href="SemiFinal.html">Citypedia</a>
+      <a class="navbar-brand mr-1" href="index.html">Citypedia</a>
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
       </button>
@@ -25,13 +25,13 @@
       $username='linxuan';
       $password='1234';
       $database=$username.'DB';
-      $con=mysqli_connect($host, $username, $password, $database) or die('Could not connect: ' . mysqli_connect_error());
+      $con=mysqli_connect($host, $username, $password, $database) or die('Could not connect: ' . mysqli_connect_error().' Click Citypedia to return!');
       
       $state=$_GET['state'];
       $city=$_GET['city'];
       $query="SELECT * FROM City WHERE statename='$state' AND cityname='$city'";
-      $result=mysqli_query($con, $query) or die('Query failed: '.mysqli_error($con));
-      $tuple = mysqli_fetch_array($result) or die("Error! " .mysqli_error($dbcon));
+      $result=mysqli_query($con, $query) or die('Query failed, please check if you input a wrong name: '.mysqli_error($con).' Click Citypedia to return!');
+      $tuple = mysqli_fetch_array($result) or die("No matched record! Please check if you input correctly." .mysqli_error($dbcon).' Click Citypedia to return!');
     ?>
 
     <div id="wrapper">
@@ -94,7 +94,8 @@
         <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-tachometer-alt"></i>
-            Basic Information</div>
+            Basic Information
+            <button type="button" class="btn-sm btn-secondary" onclick=<?php echo '\'location.href="update_overview.php?state='.$state.'&'.'city='.$city.'"\'';?>>Update</button></div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -116,12 +117,12 @@
                 </tr>
                 <tr>
                   <th>Abstract:</th>
-                  <td><?php echo 'It is a beautiful city';?></td>
+                  <td><?php echo $tuple['abstract'];?></td>
                 </tr>
               </table>
             </div>
           </div>
-          <div class="card-footer small text-muted">Power by MySQL</div>
+          <div class="card-footer small text-muted">Powered by MySQL</div>
         </div>
 
         <footer class="sticky-footer">

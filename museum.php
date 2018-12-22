@@ -13,7 +13,7 @@
 
   <body id="page-top">
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-      <a class="navbar-brand mr-1" href="SemiFinal.html">Citypedia</a>
+      <a class="navbar-brand mr-1" href="index.html">Citypedia</a>
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
       </button>
@@ -91,7 +91,10 @@
           <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-tachometer-alt"></i>
-            Museum Information</div>
+            Museum Information
+            <button type="button" class="btn-sm btn-secondary" onclick=<?php echo '\'location.href="update_museum.php?state='.$state.'&'.'city='.$city.'"\'';?>>Update</button>
+            <button type="button" class="btn-sm btn-secondary" onclick=<?php echo '\'location.href="delete_museum.php?state='.$state.'&'.'city='.$city.'"\'';?>>Delete</button>
+          </div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -118,7 +121,7 @@
               </table>
             </div>
           </div>
-          <div class="card-footer small text-muted">Power by MySQL</div>
+          <div class="card-footer small text-muted">Powered by MySQL</div>
         </div>
       </div>
      
